@@ -93,10 +93,10 @@ class RegisterFormView(FormView):
 
     # Ссылка, на которую будет перенаправляться пользователь в случае успешной регистрации.
     # В данном случае указана ссылка на страницу входа для зарегистрированных пользователей.
-    success_url = "/login/"
+    success_url = "/base/"
 
     # Шаблон, который будет использоваться при отображении представления.
-    template_name = "templates/registration/register.html"
+    template_name = "registration/register.html"
 
     def form_valid(self, form):
         # Создаём пользователя, если данные в форму были введены корректно.
