@@ -25,7 +25,7 @@ SECRET_KEY = 'm-%o!-2n28z=u@kw6oj9w@-o6s*o#c_vcp)6@*!d^f#2c5-xjp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kotara.pythonanywhere.com']
 
 
 # Application definition
