@@ -6,6 +6,9 @@ from .forms import PostForm, CommentForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import login, logout
+from django.contrib.auth.forms import AuthenticationForm
+from django.views.generic.edit import FormView
+from django.contrib.auth.forms import UserCreationForm
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -84,4 +87,23 @@ def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
+
+class RegisterFormView(FormView):
+    form_class = UserCreationForm
+
+    # Ссылка, на которую будет перенаправляться пользователь в случае успешной регистрации.
+    # В данном случае указана ссылка на страницу входа для зарегистрированных пользователей.
+    success_url = "/login/"
+
+    # Шаблон, который будет использоваться при отображении представления.
+    template_name = "templates/registration/register.html"
+
+    def form_valid(self, form):
+        # Создаём пользователя, если данные в форму были введены корректно.
+        form.save()
+
+        # Вызываем метод базового класса
+        return super(RegisterFormView, self).form_valid(form)
+
+
 

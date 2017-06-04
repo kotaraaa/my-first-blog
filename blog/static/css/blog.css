@@ -1,6 +1,7 @@
 body {
         padding-left: 0px;
 	font-family: 'Lobster';
+        font-size:16pt;
     }
    /* .page-header {
         background-color: #ff9400;
@@ -15,20 +16,23 @@ body {
     }
 
    .content {
-        margin:center;
+        margin:justify;
     }
 
     h1, h2 {
         font-family: 'Lobster', cursive;
+margin:center;
     }
  h1, h2 {
         font-family: 'Lobster';
+margin:center;
     }
 
 
 
     .date {
-        float: right;
+ margin:center;
+        float: center;
         color: #828282;
     }
 
@@ -45,7 +49,7 @@ body {
         float: right;
         font-size: 26pt;
         margin-right: 20px;
-padding: 30px 10px 10px 10px;
+        padding: 30px 10px 10px 10px;
     }
 
     .post {
@@ -56,6 +60,7 @@ padding: 30px 10px 10px 10px;
         color: #000000;
     }
     .comment {
+ 
         margin: 20px 0px 20px 20px;
     }
 
