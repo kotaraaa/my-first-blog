@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^accounts/login/$', views.login, name='login'),
     url(r'^accounts/logout/$', views.logout, name='logout', kwargs={'next_page': '/'}),
     url(r'^register/$', views.RegisterFormView.as_view(), name='register'),
+   
 ]
 def post_detail(request, pk):{
     Post.objects.get(pk=pk)}
